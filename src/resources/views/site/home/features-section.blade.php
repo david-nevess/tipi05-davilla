@@ -16,7 +16,7 @@
                             <!-- cake img -->
                             <div class="icon flaticon-technology"></div>
                         </div>
-                        <h3>Tradition</h3>
+                        <h3>Tradicional</h3>
                         <p>Lorem ipsum dolor amet, consectetur adipiscing elit. Nam consectetur facilisis aliquet.</p>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                             <!-- cake img -->
                             <div class="icon flaticon-food-7"></div>
                         </div>
-                        <h3>Quality</h3>
+                        <h3>Qualidade</h3>
                         <p>Amet interdum, diam molestie fusce natoque, nascetur laoreet mattis cras hendrerit.</p>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                             <!-- cake img -->
                             <div class="icon flaticon-strawberry"></div>
                         </div>
-                        <h3>Creatuvity</h3>
+                        <h3>Criatividade</h3>
                         <p>Ullamcorper phasellus per vestibulum, lacus curabitur, rutrum mi fringilla.</p>
                     </div>
                 </div>

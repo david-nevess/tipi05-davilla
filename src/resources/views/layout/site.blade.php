@@ -2,6 +2,8 @@
 <html lang="PT-BR">
     <head>
         @include('partials.head')
+
+        <link rel="stylesheet" href="{{ asset('hardsettings/estilo.css') }}">
     </head>
 
 <body>
