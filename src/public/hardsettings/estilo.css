@@ -16,9 +16,7 @@
     margin-top: 10px;
 }
 
-.main-slider{
-    padding: 30px 0;
-}
+
 
 .features-section .auto-container .row{
     top: 100px;
@@ -26,4 +24,8 @@
 
 .main-box .menu-box .logo img{
     margin-left: 40px;
+}
+
+.main-slider{
+    margin-bottom: 50px;
 }

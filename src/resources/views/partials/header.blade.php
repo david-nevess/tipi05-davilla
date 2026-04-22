@@ -14,7 +14,9 @@
                     <nav class="main-menu navbar-expand-md navbar-light">
                         <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                             <ul class="navigation menu-left clearfix">
-                                <li class="current dropdown"><a href="index.html">Home</a>
+                                <li><a href="{{ route('home') }}">Home</a></li>
+                                <li><a href="{{ route('sobre') }}">Sobre</a></li>
+                                <!-- <li class="current dropdown"><a href="index.html">Home</a>
                                     <ul>
                                         <li class="current"><a href="index.html">Cakes</a></li>
                                         <li><a href="index-2.html">Lollipop</a></li>
@@ -25,7 +27,7 @@
                                         <li><a href="index-7.html">Shop</a></li>
                                         <li><a href="index-8.html">Landing</a></li>
                                     </ul>
-                                </li>
+                                </li> -->
                                 <li class="dropdown"><a href="about-us.html">Pages</a>
                                     <ul>
                                         <li><a href="about-us.html">About Us</a></li>
