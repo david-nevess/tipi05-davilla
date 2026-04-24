@@ -1,6 +1,6 @@
 <head>
 <meta charset="utf-8">
-<title>Bellaria - a Delicious Cakes and Bakery HTML Template | Home Cake</title>
+<title>DaVilla: Da nossa villa para a sua mesa.</title>
  
 <!-- Stylesheets -->
 <link href="{{ asset('davilla/css/bootstrap.css') }}" rel="stylesheet">
