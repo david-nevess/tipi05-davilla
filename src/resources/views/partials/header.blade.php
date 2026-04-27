@@ -80,7 +80,7 @@
                                         <li><a href="login.html">My account</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact.html">Contacts</a></li>
+                                <li><a href="{{ route('contato') }}">Contacts</a></li>
                             </ul>
                         </div>
                     </nav>
