@@ -37,3 +37,11 @@
 .main-footer .footer-bottom{
     background-color: gray;
 }
+
+.outer-box .inner-box{
+    /* background-color: rgb(25, 177, 131); */
+}
+
+.outer-box .inner-box{
+    margin: 50px 0 50px 0;
+}

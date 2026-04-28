@@ -17,3 +17,12 @@ Route::get('/cardapio', [CardapioController::class, 'cardapio'])->name('cardapio
 Route::get('/contato', [ContatoController::class, 'contato'])->name('contato');
 Route::get('/regiao', [RegiaoController::class, 'regiao'])->name('regiao');
 Route::get('/login', [LoginController::class, 'login'])->name('login');
+
+// Submenu de cardapio
+Route::get('/cardapio/categoria/{id}', [CardapioController::class, 'show'])->name('cardapio.categoria');
+
+// Submenu de região
+Route::get('/regiao/area/{id}', [RegiaoController::class, 'show'])->name('regiao.area');
+
+// Submenu de loja
+Route::get('/regiao/area/{id}', [RegiaoController::class, 'show'])->name('regiao.area');

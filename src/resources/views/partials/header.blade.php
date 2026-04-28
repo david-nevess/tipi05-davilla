@@ -14,8 +14,17 @@
                     <nav class="main-menu navbar-expand-md navbar-light">
                         <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                             <ul class="navigation menu-left clearfix">
+
                                 <li><a href="{{ route('home') }}">Home</a></li>
-                                <li><a href="{{ route('sobre') }}">Sobre</a></li>
+
+                                <li class="dropdown"><a href="{{ route('sobre') }}">Sobre</a>
+                                <ul>
+                                        <li><a href="about-us.html">Quem Somos</a></li>
+                                        <li><a href="our-staff.html">Nossa Equipe</a></li>
+                                        <li><a href="pricing-tables.html">Nosso Espaço</a></li>
+                                    </ul>
+                            </li>
+
                                 <!-- <li class="current dropdown"><a href="index.html">Home</a>
                                     <ul>
                                         <li class="current"><a href="index.html">Cakes</a></li>
@@ -28,16 +37,18 @@
                                         <li><a href="index-8.html">Landing</a></li>
                                     </ul>
                                 </li> -->
-                                <li class="dropdown"><a href="about-us.html">Pages</a>
+
+                                <li class="dropdown"><a href="{{ route('cardapio') }}">Cardápio</a>
                                     <ul>
-                                        <li><a href="about-us.html">About Us</a></li>
-                                        <li><a href="our-staff.html">Our Staff</a></li>
-                                        <li><a href="pricing-tables.html">Pricing Tables</a></li>
-                                        <li><a href="content-elements.html">Content Elements</a></li>
-                                        <li><a href="recipes-list.html">Recipes Grid</a></li>
+                                        @forelse($lista as $linha)
+                                        <li><a href="{{ route('cardapio', ['id' => $linha->id_categoria]) }}">{{ $linha->nome_categoria }}</a></li>
+                                        @empty
+                                        <li>Nenhuma Categoria</li>
+                                        @endforelse
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="portfolio-masonry.html">Portfolio</a>
+
+                                <!-- <li class="dropdown"><a href="portfolio-masonry.html">Portfolio</a>
                                     <ul>
                                         <li><a href="portfolio-masonry.html">Masonry</a></li>
                                         <li><a href="portfolio-masonry-wide.html">Masonry Wide</a></li>
@@ -48,39 +59,27 @@
                                         <li><a href="portfolio-square.html">Square</a></li>
                                         <li><a href="portfolio-single.html">single Post</a></li>
                                     </ul>
-                                </li>
+                                </li> -->
                             </ul>
 
                             <ul class="navigation menu-right clearfix">
-                                <li class="dropdown"><a href="blog-showcase.html">Blog</a>
+                                <li class="dropdown"><a href="blog-showcase.html">Galeria</a>
                                     <ul>
-                                        <li><a href="blog-showcase.html">Checkerboard</a></li>
-                                        <li><a href="blog-standard.html">Standard</a></li>
-                                        <li><a href="blog-masonry.html">Masonry</a></li>
-                                        <li><a href="blog-masonry-full-width.html">Masonry Full Width</a></li>
-                                        <li><a href="blog-two-column.html">Two Columns Grid</a></li>
-                                        <li><a href="blog-three-column-wide.html">Three Columns Wide</a></li>
-                                        <li class="dropdown"><a href="#">Post Types</a>
-                                            <ul>
-                                                <li><a href="blog-single.html">Standard Post</a></li>
-                                                <li><a href="blog-single-2.html">Gallery Post</a></li>
-                                                <li><a href="blog-single-3.html">Video Post</a></li>
-                                                <li><a href="blog-single-4.html">Audio Post</a></li>
-                                                <li><a href="blog-single-5.html">Quote Post</a></li>
-                                                <li><a href="blog-single-6.html">Link Post</a></li>
-                                            </ul>
-                                        </li>
+                                        <li><a href="blog-showcase.html">Fotos dos Doces</a></li>
+                                        <li><a href="blog-standard.html">Eventos</a></li>
+                                        <li><a href="blog-masonry.html">Álbum</a></li>
+                                    </li>
+                                    </ul>
+
+                                <li class="dropdown"><a href="shop.html">Loja</a>
+                                    <ul>
+                                        <li><a href="shop.html">Ver Produtos</a></li>
+                                        <li><a href="shopping-cart.html">Carrinho</a></li>
+                                        <li><a href="{{ route('login') }}">Minha Conta</a></li>
+                                        <li><a href="login.html">Finalizar Pedido</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="shop.html">Shop</a>
-                                    <ul>
-                                        <li><a href="shop.html">Shop</a></li>
-                                        <li><a href="shopping-cart.html">Cart</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="login.html">My account</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="{{ route('contato') }}">Contacts</a></li>
+                                <li><a href="{{ route('contato') }}">Contato</a></li>
                             </ul>
                         </div>
                     </nav>
