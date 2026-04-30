@@ -20,4 +20,10 @@
     </div>
 
     @include('partials.script')
+
+    @stack('plugins')
+
+    <script src="{{ asset('davilla/js/script.js') }}"></script>
+
+    @stack('scripts')
 </body>

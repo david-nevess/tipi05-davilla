@@ -19,6 +19,6 @@
 		<script src="{{ asset('davilla/js/owl.js') }}"></script>
 		<script src="{{ asset('davilla/js/wow.js') }}"></script>
 		<script src="{{ asset('davilla/js/appear.js') }}"></script>
-		<script src="{{ asset('davilla/js/script.js') }}"></script>
+		<!-- <script src="{{ asset('davilla/js/script.js') }}"></script> -->
 		<script src="{{ asset('js/select2.min.js') }}"></script>
 		<script src="{{ asset('js/sticky_sidebar.min.js') }}"></script>
