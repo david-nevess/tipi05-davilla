@@ -22,7 +22,7 @@ class Categoria extends Model
     ];
 
     public function ProdutosCategoria() {
-        return $this->hasMany(Produto::class, 'idcategoria', 'id categoria');
+        return $this->hasMany(Produto::class, 'id_categoria', 'id_categoria');
     }
 
 }
