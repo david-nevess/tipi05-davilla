@@ -21,6 +21,9 @@ Route::get('/login', [LoginController::class, 'login'])->name('login');
 // Submenu de cardapio
 Route::get('/cardapio/categoria/{id}', [CardapioController::class, 'show'])->name('cardapio.categoria');
 
+// Submenu de Produto
+Route::get('/cardapio/produto/{slug}', [CardapioController::class, 'showProduto'])->name('cardapio.produto');
+
 // Submenu de região
 Route::get('/regiao/area/{id}', [RegiaoController::class, 'show'])->name('regiao.area');
 
