@@ -24,10 +24,27 @@
  
 body {
     overflow: auto !important;
+    background-color: rgb(250 228 253) !important;
 }
- 
+
+ .page-wrapper{
+    background-color: rgb(250 228 253) !important;
+}
+
+.fancybox-can-drag .fancybox-image-wrap{
+    background-color: rgb(250 228 253) !important;
+}
+
 .preloader {
     display: none !important;
+}
+
+.main-header{
+    background-color: rgb(250 228 253);
+}
+.main-header .menu_wave{
+    background-color: rgb(250 228 253);
+    margin-bottom: -40px;
 }
  
 .main-box .menu-box .logo img{
@@ -52,4 +69,25 @@ body {
  
 .outer-box .inner-box{
     margin: 50px 0 50px 0;
+}
+
+.shape_wrapper .overlay {
+    background-color: rgb(98 104 157 / 70%);
+}
+
+.main-footer .footer-bottom{
+    background-color: rgb(98 104 157);
+}
+
+.services-section:before {
+    background-color: rgb(230 202 243 / 80%);
+}
+
+.donuts{
+    width: 100%;
+    height: 410px;
+}
+
+.portfolio-section.alternate2 {
+    padding: 0px 0 40px;
 }

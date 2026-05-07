@@ -1,5 +1,9 @@
     <!-- Portfolio Sections -->
     <section class="portfolio-section alternate2 portfolio-with-filter">
+
+            <div class="donuts" style="background-image: url('{{ asset('davilla/images/img-donuts3.png') }}')"></div>
+            
+
         <div class="container-fluid">
  
             <!--MixitUp Galery-->
