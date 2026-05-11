@@ -7,7 +7,7 @@
                     <li data-index="rs-4" data-transition="slideleft" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="850"  data-thumb="#"  data-delay="5999"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                     
                     <!-- MAIN IMAGE -->
-                    <img src="{{ asset('davilla/images/imagem-banner01.pn') }}">  alt="" title="Home Cakes"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                    <img src="{{ asset('davilla/images/main-slider/img-banner01.png') }}">  alt="" title="Home Cakes"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
                     <!-- LAYERS -->
 
                     <!-- LAYER NR. 1 -->
@@ -26,7 +26,7 @@
                         data-paddingright="[0,0,0,0]"
                         data-paddingbottom="[0,0,0,0]"
                         data-paddingleft="[0,0,0,0]"
-                        style="z-index: 5;background-color:rgba(13, 54, 131, 0.53);"></div>
+                        style="z-index: 5;background-color:rgba(13, 54, 131, 0);"></div>
 
                     <!-- LAYER NR. 2 -->
                     <!-- <div class="tp-caption   tp-resizeme" 
@@ -135,7 +135,7 @@
                     <!-- SLIDE  -->
                     <li data-index="rs-5" data-transition="slideleft" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="850"  data-thumb=""  data-delay="5999"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                         <!-- MAIN IMAGE -->
-                        <img src="{{ asset('davilla/images/imagem-banner02.png') }}"  alt="" title="Home Cakes"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                        <img src="{{ asset('davilla/images/main-slider/img-banner02.png') }}"  alt="" title="Home Cakes"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
                         <!-- LAYERS -->
 
                         <!-- LAYER NR. 8 -->
@@ -262,7 +262,7 @@
                     <!-- SLIDE  -->
                     <li data-index="rs-6" data-transition="slideleft" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="850"  data-thumb=""  data-delay="5999"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                         <!-- MAIN IMAGE -->
-                        <img src="{{ asset('davilla/images/imagem-banner02.png') }}"  alt="" title="Home Cakes"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                        <img src="{{ asset('davilla/images/main-slider/img-banner04.png') }}"  alt="" title="Home Cakes"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
                         <!-- LAYERS -->
 
                         <!-- LAYER NR. 15 -->

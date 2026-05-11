@@ -24,7 +24,7 @@ class CardapioController extends Controller
 
     public function showProduto($slug){
 
-        $produto = Produto::with('CategoriaProduto')->where('status_produto', 'ATIVO')->where('id_produto', $slug)->firstOrFail();
+        $produto = Produto::with('CategoriaProduto')->where('status_produto', 'ATIVO')->where('slug_produto', $slug)->firstOrFail();
 
         //dd($produto);
 

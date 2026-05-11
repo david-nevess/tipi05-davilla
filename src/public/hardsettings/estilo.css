@@ -91,3 +91,11 @@ body {
 .portfolio-section.alternate2 {
     padding: 0px 0 40px;
 }
+
+
+.btn-style-two, .btn-style-two span:before {
+    box-shadow: 0px 0px 0px 3px #0a10bb;
+    color: #4b4342;
+    background-color: #e9e4e4;
+    border-color: #4b4342;
+}
