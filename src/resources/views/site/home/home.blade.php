@@ -4,8 +4,8 @@
 
 @include('site.home.main-slider')
 @include('site.home.features-section')
+@include('site.cardapio.portfolio-section')
 @include('site.home.services-section')
-@include('site.home.portfolio-section')
 @include('site.home.recipes-section')
 @include('site.home.pricing-section')
 @include('site.home.testimonial-section')
