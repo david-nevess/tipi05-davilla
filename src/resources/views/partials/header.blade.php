@@ -6,7 +6,9 @@
         <!-- Main box -->
         <div class="main-box">
             <div class="menu-box">
-                <div class="logo"><a href="index.html"><img src="{{ asset('davilla/images/img-logo-davilla02.png') }}" alt="" title=""></a></div>
+                <!-- <div class="logo"><a href="index.html"><img src="{{ asset('davilla/images/img-logo-davilla02.png') }}" alt="" title=""></a></div> -->
+
+                <div class="logo"><a href="{{ route('home') }}"><img src="{{ asset('davilla/images/logo-davilla-02.png') }}" alt="" title=""></a></div>
  
                 <!--Nav Box-->
                 <div class="nav-outer clearfix">
@@ -146,7 +148,7 @@
  
         <!-- Mobile Header -->
         <div class="mobile-header">
-            <div class="logo"><a href="index.html"><img src="i{{ asset('davilla/images/img-logo-davilla02.png') }}" alt="" title=""></a></div>
+            <div class="logo"><a href="index.html"><img src="i{{ asset('davilla/images/logo-davilla-02.png') }}" alt="" title=""></a></div>
  
             <!--Nav Box-->
             <div class="nav-outer clearfix">
@@ -157,7 +159,7 @@
         <!-- Mobile Menu  -->
         <div class="mobile-menu">            
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="{{ asset('davilla/images/img-logo-davilla02.png') }}" alt="" title=""></a></div>
+                <div class="nav-logo"><a href="index.html"><img src="{{ asset('davilla/images/logo-davilla-02.png') }}" alt="" title=""></a></div>
                 <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
             </nav>
         </div><!-- End Mobile Menu -->

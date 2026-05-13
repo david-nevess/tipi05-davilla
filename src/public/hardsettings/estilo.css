@@ -1,56 +1,253 @@
-/* .main-box .menu-box .logo img{
-    max-width: 10%;
-    margin-left: 30px;
-    margin-top: 10px;
+/* STREAMING_CHUNK: Configurando o Header Fixo e Layout Base... 
+
+Transformamos o header em uma barra fixa com efeito Blur
+para um ar de sofisticação premium. */
+
+.main-header {
+position: fixed !important;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 999;
+background: rgba(255, 255, 255, 0.9); /* Branco levemente transparente */
+backdrop-filter: blur(10px);  /* Efeito de vidro moderno */
+box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+transition: all 400ms ease;
 }
- 
-.main-box .menu-box .logo{
-    z-index: 0;
+
+.main-header .menu_wave {
+    width: 105%;
+    height: 150%;
+    margin-bottom: -30px;
 }
- 
-.main-menu .menu-right{
-    margin-top: 10px;
+
+/* STREAMING_CHUNK: Centralizando a Logo Milimetricamente... /
+/
+Usamos posicionamento absoluto na logo para que ela não "empurre"
+os itens do menu, garantindo o centro perfeito do viewport.
+*/
+.main-header .logo {
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+z-index: 1001;
+margin: 0 !important;
+padding: 0 !important;
 }
- 
-.main-menu .menu-left{
-    margin-top: 10px;
+
+.main-header .logo img {
+width: 100px !important;
+height: 100px !important;
+object-fit: contain;
+display: block;
+image-rendering: -webkit-optimize-contrast;
 }
- 
- 
- 
-.features-section .auto-container .row{
-    top: 100px;
-} */
- 
+
+/* STREAMING_CHUNK: Organizando os Menus Laterais (Esquerda e Direita)... 
+
+Forçamos o container do menu a ocupar 100% da largura e
+distribuir os menus left/right para as extremidades. */
+
+.main-header .menu-box {
+display: flex !important;
+align-items: center;
+justify-content: center;
+max-width: 1200px;
+margin: 0 auto;
+padding: 10px 20px;
+height: 80px; /* Altura fixa para harmonia visual */
+position: relative;
+}
+
+.main-header .nav-outer {
+width: 100%;
+float: none !important;
+margin: 0 !important;
+}
+
+.main-header .navbar-collapse {
+display: flex !important;
+justify-content: space-between !important;
+align-items: center;
+width: 100%;
+}
+
+/* STREAMING_CHUNK: Calculando o Respiro para a Logo... 
+
+Adicionamos um padding interno nos menus para que os itens
+não "atropelem" a logo central quando a tela diminuir. */
+
+.navigation.menu-left {
+display: flex;
+justify-content: flex-end;
+flex: 1;
+padding-right: 60px; /* Espaço para a logo de 50px + margem */
+margin: 0 !important;
+}
+
+.navigation.menu-right {
+display: flex;
+justify-content: flex-start;
+flex: 1;
+padding-left: 100px; /* Espaço para a logo de 50px + margem */
+margin: 0 !important;
+}
+
+/* Ajuste dos itens da lista para ficarem horizontais */
+.navigation > li {
+float: none !important;
+display: inline-block !important;
+margin: 0 15px !important;
+}
+
+/* STREAMING_CHUNK: Ajustes de Responsividade e Botões... /
+/ Ocultamos elementos que podem poluir o visual centralizado */
+.main-header .outer-box {
+position: absolute;
+right: -250px;
+top: 50%;
+transform: translateY(-50%);
+display: flex;
+align-items: center;
+}
+
+ /* STREAMING_CHUNK: Sincronização com o Sticky Header... 
+Garante que quando o usuário rolar a página, o layout permaneça idêntico  */
+.sticky-header {
+display: none !important; /* Desativamos o sistema antigo para evitar conflitos */
+}
+
+/* Compensação para o corpo do site não subir para baixo da nav fixa */
 body {
-    overflow: auto !important;
-    background-color: rgb(250 228 253) !important;
+padding-top: 80px;
 }
 
- .page-wrapper{
-    background-color: rgb(250 228 253) !important;
+
+
+/* ########################## Estilazação das Ondas ############################ */
+/* 1. Animação Suave para as Ondas */
+@keyframes waveMotion {
+0% { transform: translateX(0) translateY(0); }
+50% { transform: translateX(-10px) translateY(5px); }
+100% { transform: translateX(0) translateY(0); }
 }
 
-.fancybox-can-drag .fancybox-image-wrap{
-    background-color: rgb(250 228 253) !important;
+.menu_wave, .bottom_wave {
+animation: waveMotion 6s ease-in-out infinite;
+z-index: 10;
 }
 
+
+/*
+REVISÃO FINAL DE HIERARQUIA E LAYOUT (Z-INDEX)
+Este arquivo consolida o menu centralizado com a correção das ondas.
+*/
+
+/* .main-header {
+position: fixed !important;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 999;
+background: rgba(255, 255, 255, 0.95);
+backdrop-filter: blur(10px);
+box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+transition: all 400ms ease;
+} */
+
+/* O SEGREDO: A onda fica no fundo da Nav  */
+.menu_wave {
+position: absolute;
+bottom: -15px;
+left: 0;
+width: 100%;
+height: 60px;
+z-index: -1; / Fica atrás dos links /
+pointer-events: none; / Mouse ignora a onda para clicar nos links */
+opacity: 0.8;
+}
+
+/* Container centralizador */
+.main-header .menu-box {
+display: flex !important;
+align-items: center;
+justify-content: center;
+max-width: 1300px;
+margin: 0 auto;
+height: 90px;
+position: relative;
+margin-top: 20px;
+}
+
+/* Logo Central */
+.main-header .logo {
+position: absolute;
+/* left: 50%;
+top: 50%; */
+transform: translate(-50%, -50%);
+z-index: 1001;
+}
+
+.main-header .logo img {
+/* width: 50px !important;
+height: 50px !important; */
+object-fit: contain;
+}
+
+/* Menus Laterais */
+.navigation {
+position: relative;
+z-index: 20;
+display: flex !important;
+align-items: center;
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+.navigation.menu-left {
+justify-content: flex-end;
+flex: 1;
+padding-right: 80px; /* Espaço para não bater na logo */
+}
+
+.navigation.menu-right {
+justify-content: flex-start;
+flex: 1;
+padding-left: 80px; /* Espaço para não bater na logo */
+}
+
+/* .navigation > li {
+margin: 0 15px !important;
+} */
+
+.navigation > li > a {
+color: #3D2B1F !important; /* Marrom Cacau */
+/* font-weight: 700;
+text-transform: uppercase;
+font-size: 13px;
+letter-spacing: 1px; */
+transition: 0.3s;
+}
+
+.navigation > li > a:hover {
+color: #F497AD !important; /* Rosa Glacê */
+}
+
+/* Ajuste para o conteúdo do site não subir para baixo da nav fixa */
+body {
+padding-top: 90px;
+}
+
+/* ################################# Fim da Nav ############################# */
+
+/* ########################## Tela de Carregamento ############################## */
 .preloader {
     display: none !important;
 }
+/* Fim da Tela de Carregamento ############################# */
 
-.main-header{
-    background-color: rgb(250 228 253);
-}
-.main-header .menu_wave{
-    background-color: rgb(250 228 253);
-    margin-bottom: -40px;
-}
- 
-.main-box .menu-box .logo img{
-    margin-left: 40px;
-}
- 
 .main-slider{
     margin-bottom: 50px;
 }
@@ -58,44 +255,6 @@ body {
 .testimonial-section{
     margin-bottom: 100px;
 }
- 
-.main-footer .footer-bottom{
-    background-color: gray;
-}
- 
-/* .outer-box .inner-box{
-    background-color: rgb(25, 177, 131);
-} */
- 
-.outer-box .inner-box{
-    margin: 50px 0 50px 0;
-}
 
-.shape_wrapper .overlay {
-    background-color: rgb(98 104 157 / 70%);
-}
+/* ################### Section do Banner ############### */
 
-.main-footer .footer-bottom{
-    background-color: rgb(98 104 157);
-}
-
-.services-section:before {
-    background-color: rgb(230 202 243 / 80%);
-}
-
-.donuts{
-    width: 100%;
-    height: 410px;
-}
-
-.portfolio-section.alternate2 {
-    padding: 0px 0 40px;
-}
-
-
-.btn-style-two, .btn-style-two span:before {
-    box-shadow: 0px 0px 0px 3px #0a10bb;
-    color: #4b4342;
-    background-color: #e9e4e4;
-    border-color: #4b4342;
-}

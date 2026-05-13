@@ -1,16 +1,21 @@
 <?php
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\SobreController;
-use App\Http\Controllers\PedidosController;
-use App\Http\Controllers\CardapioController;
-use App\Http\Controllers\ContatoController;
-use App\Http\Controllers\RegiaoController;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Site\HomeController;
+use App\Http\Controllers\Site\SobreController;
+use App\Http\Controllers\Site\PedidosController;
+use App\Http\Controllers\Site\CardapioController;
+use App\Http\Controllers\Site\ContatoController;
+use App\Http\Controllers\Site\RegiaoController;
+use App\Http\Controllers\Site\LoginController;
+
+// Admin
+use App\Http\Controllers\Admin\DashController;
+
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
+
 Route::get('/sobre', [SobreController::class, 'sobre'])->name('sobre');
 Route::get('/pedidos', [PedidosController::class, 'pedidos'])->name('pedidos');
 Route::get('/cardapio', [CardapioController::class, 'cardapio'])->name('cardapio');
@@ -29,3 +34,9 @@ Route::get('/regiao/area/{id}', [RegiaoController::class, 'show'])->name('regiao
 
 // Submenu de loja
 Route::get('/regiao/area/{id}', [RegiaoController::class, 'show'])->name('regiao.area');
+
+Route::prefix('admin')->name('admin.')->group(function(){
+
+    Route::get('/', [DashController::class, 'index'])->name('dash');
+    
+});
