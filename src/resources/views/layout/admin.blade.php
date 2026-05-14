@@ -2,7 +2,7 @@
 <html lang="PT-BR">
     
     <head>
-        @include('admin.partials.head')
+        @include('admin.partials.app-head')
 
     </head>
 
@@ -12,7 +12,7 @@
 
         @include('admin.partials.app-header')
 
-        @include('admin.partials.app-slidebar')
+        @include('admin.partials.app-sidebar')
 
         <main class="app-main">
             @yield('content')

@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Controllers\Site\HomeController;
 use App\Http\Controllers\Site\SobreController;
 use App\Http\Controllers\Site\PedidosController;
@@ -10,6 +11,7 @@ use App\Http\Controllers\Site\LoginController;
 
 // Admin
 use App\Http\Controllers\Admin\DashController;
+use App\Http\Controllers\Admin\CategoriaController;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
@@ -38,5 +40,8 @@ Route::get('/regiao/area/{id}', [RegiaoController::class, 'show'])->name('regiao
 Route::prefix('admin')->name('admin.')->group(function(){
 
     Route::get('/', [DashController::class, 'index'])->name('dash');
+
+// Categorias
+    route::get('/categorias', [CategoriaController::class, 'index'])->name('categoria.index');
     
 });

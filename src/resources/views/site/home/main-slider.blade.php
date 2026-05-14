@@ -1,5 +1,5 @@
 <!--Main Slider-->
-<section class="main-slider">
+<section class="main-slider davilla-wave-banner">
     <div class="slider_wave"></div>
     <div class="rev_slider_wrapper fullwidthbanner-container" id="rev_slider_one_wrapper" data-source="gallery">
         <div class="rev_slider fullwidthabanner" id="rev_slider_one" data-version="5.4.1">
@@ -85,7 +85,7 @@
     style="z-index: 20; pointer-events: auto;">
     
     <a href="{{ $banner->link_botao_banner }}" 
-       class="theme-btn btn-style-one" 
+       class="theme-btn btn-style-one btn-davilla" 
        style="text-decoration: none; position: relative; z-index: 999; cursor: pointer;">
         {{ $banner->texto_botao_banner }}
     </a>

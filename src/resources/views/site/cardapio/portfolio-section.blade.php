@@ -59,7 +59,7 @@
                                 </div>
                                 <div class="text">{{ \Illuminate\Support\Str::limit($linha->descricao_produto, 100) }}
                             </div>
-                                <div class="price">{{ number_format($linha->valor_produto, 2, ',', '.') }}</div>
+                                <div class="price"> R$ {{ number_format($linha->valor_produto, 2, ',', '.') }}</div>
                             </div>
                         </div>
                     </div>
@@ -71,7 +71,7 @@
             </div>
  
             <div class="btn-box text-center">
-                <a href="#" class="theme-btn btn-style-two large "><span></span>Load More<span></span></a>
+                <a href="#" class="theme-btn btn-style-two large btn-davilla"><span></span>Load More<span></span></a>
             </div>
         </div>
     </section>
