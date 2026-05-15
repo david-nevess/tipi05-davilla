@@ -14,48 +14,85 @@
     --branco: #ffffff;
     --preto-suave: #222222;
     --transicao-suave: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --transicao-premium: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-/* 2. BOTÃO PADRÃO DAVILLA (RECUPERADO) 
-   Use a classe .btn-davilla ou .theme-btn para manter a consistência.
-*/
-.btn-davilla, .theme-btn {
+/* ##################### Padronização dos Botões ##################### */
+
+
+/* 1. ESTRUTURA BASE (Agrupando a nova classe .regular) */
+.btn-box .theme-btn.btn-style-two,
+.btn-box .theme-btn,
+.theme-btn.regular {
+    background: var(--marrom-cacau) !important;
+    border: none !important;
     position: relative;
-    display: inline-block;
-    padding: 15px 50px;
-    background-color: var(--marrom-cacau) !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Geometria equilibrada para um toque mais moderno */
+    padding: 17px 48px !important;
+    border-radius: 60px !important;
+    
+    /* Tipografia Profissional */
     color: var(--branco) !important;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    text-transform: capitalize;
-    border-radius: 50px;
-    border: 2px solid var(--marrom-cacau);
-    transition: var(--transicao-suave);
-    z-index: 1;
+    font-family: var(--fonte-principal) !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.2px !important;
+    text-decoration: none !important;
+    
+    /* Sombreamento Subtil (Efeito de Profundidade de Camada) */
+    transition: var(--transicao-premium) !important;
+    box-shadow: 0 4px 15px rgba(61, 43, 31, 0.1) !important;
     cursor: pointer;
-    text-align: center;
-    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
 }
 
-/* Efeito de Hover Padrão */
-.btn-davilla:hover, .theme-btn:hover {
-    background-color: var(--rosa-glace) !important; 
-    border-color: var(--rosa-glace);
-    transform: scale(1.05) translateY(-2px);
-    box-shadow: 0 12px 25px rgba(244, 151, 173, 0.3);
-    color: var(--branco) !important;
+/* 2. EFEITO DE HOVER */
+.btn-box .theme-btn.btn-style-two:hover,
+.btn-box .theme-btn:hover,
+.theme-btn.regular:hover {
+    background-color: var(--rosa-glace) !important;
+    
+    /* Pequeno aumento de escala e elevação leve */
+    transform: translateY(-4px) scale(1.02);
+    
+    /* Sombra torna-se uma "aura" difusa e suave */
+    box-shadow: 0 12px 30px rgba(244, 151, 173, 0.25) !important;
+    
+    /* O texto "respira" ligeiramente (Efeito de luxo) */
+    letter-spacing: 2px !important;
 }
 
-.btn-davilla:active, .theme-btn:active {
-    transform: scale(0.98) translateY(0);
+/* 3. RESET DE ELEMENTOS INTERNOS (Remove os spans vazios do seu HTML) */
+.theme-btn span,
+.theme-btn::before,
+.theme-btn::after {
+    display: none !important;
+    content: none !important;
 }
 
-.theme-btn.large {
-    width: 250px;
-    font-size: 26px;
-    line-height: 30px;
+/* 4. FEEDBACK DE TOQUE */
+.btn-box .theme-btn:active,
+.theme-btn.regular:active {
+    transform: translateY(-1px) scale(0.98);
+    box-shadow: 0 5px 15px rgba(244, 151, 173, 0.2) !important;
+    transition: all 0.2s ease !important;
 }
+
+/* 5. FOCO DE ACESSIBILIDADE */
+.btn-box .theme-btn:focus,
+.theme-btn.regular:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(244, 151, 173, 0.3), 0 4px 15px rgba(61, 43, 31, 0.1) !important;
+}
+
+
+/* ##################### Fim da padronização dos Botões ############################## */
 
 
 
@@ -733,14 +770,311 @@ Foco: Suavidade, Profundidade e Experiência Visual Premium
     margin-top: 5px;
 }
 
+/* ##################### Inicio da section Services ############################## */
+
+/* DAVILLA GOURMET - SERVICES SECTION REFINEMENT
+   Design focado em sofisticação e legibilidade.
+*/
+
+.services-section {
+    background-color: #ffffff !important; /* Fundo limpo para destacar os produtos */
+    padding: 100px 0 80px;
+}
+
+.service-block .image {
+    left: -10px;
+    right: 0;
+    top: -12px;
+}
+
+/* --- TÍTULO --- */
+.services-section .sec-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    color: #3D2B1F; /* Marrom Cacau */
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+
+.services-section .sec-title .divider {
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+/* --- CARDS (SERVICE BLOCKS) --- */
+.service-block .inner-box {
+    position: relative;
+    padding: 30px 20px;
+    background: transparent;
+    border-radius: 40px;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-block .inner-box:hover {
+    background: #FFF9F0; /* Creme muito suave */
+    transform: translateY(-12px);
+}
+
+/* --- MOLDURAS SVG (FRAMES) --- */
+.services_frame {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 110%; /* Um pouco maior que a imagem */
+    height: 110%;
+    z-index: 1;
+}
+
+.services_frame svg path {
+    fill: none;
+    stroke: #F497AD; /* Rosa DaVilla */
+    stroke-width: 1.5px;
+    transition: all 0.5s ease;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawFrame 3s forwards;
+}
+
+/* Efeito de preenchimento suave no hover */
+.service-block .inner-box:hover .services_frame svg path {
+    fill: rgba(244, 151, 173, 0.05); /* Leve toque rosado dentro da moldura */
+    stroke-width: 3px;
+    transform: scale(1.02);
+}
+
+/* --- IMAGENS DOS DOCES --- */
+.service-block .image-box .image {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Torna as fotos redondas para encaixar no SVG */
+    overflow: hidden;
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.5s ease;
+}
+
+.service-block .inner-box:hover .image {
+    box-shadow: 0 15px 40px rgba(244, 151, 173, 0.3);
+    transform: scale(1.05);
+}
+
+.service-block .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- TEXTOS --- */
+.service-block h3 {
+    margin-top: 25px;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #3D2B1F;
+    transition: 0.3s;
+}
+
+.service-block .inner-box:hover h3 {
+    color: #F497AD;
+}
+
+.service-block p {
+    font-size: 15px;
+    color: #777;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+/* --- ANIMAÇÕES --- */
+@keyframes drawFrame {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Animação de rotação lenta nas molduras para dar charme */
+.services_frame svg {
+    animation: rotateSlow 20s linear infinite;
+}
+
+@keyframes rotateSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* --- CONTROLES DO CAROUSEL (DOTS) --- */
+.owl-theme .owl-dots .owl-dot span {
+    background: #e0e0e0 !important;
+    width: 10px;
+    height: 10px;
+    transition: all 0.3s ease;
+}
+
+.owl-theme .owl-dots .owl-dot.active span {
+    background: #F497AD !important;
+    width: 25px;
+}
 
 
 
 
+/* Container Principal do Item */
+.specialty-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* O "Palco" da Imagem */
+.cupcake-container {
+    position: relative;
+    width: 180px;  /* Tamanho fixo para evitar quebras */
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+/* A IMAGEM COM MÁSCARA */
+.cupcake-container img {
+    width: 82%;   /* Deixa espaço para a borda não encostar */
+    height: 82%;
+    object-fit: cover;
+    z-index: 2;
+    transition: var(--transition-soft);
+    
+    /* Forma orgânica suave */
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.apache.org/licenses/LICENSE-2.0'%3E%3Cpath fill='black' d='M100,10 C120,10 125,25 145,25 C165,25 175,35 185,55 C195,75 195,90 195,105 C195,120 190,140 180,155 C170,170 155,180 140,185 C125,190 115,195 100,195 C85,195 75,190 60,185 C45,180 30,170 20,155 C10,140 5,120 5,105 C5,90 5,75 15,55 C25,35 35,25 55,25 C75,25 80,10 100,10 Z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.apache.org/licenses/LICENSE-2.0'%3E%3Cpath fill='black' d='M100,10 C120,10 125,25 145,25 C165,25 175,35 185,55 C195,75 195,90 195,105 C195,120 190,140 180,155 C170,170 155,180 140,185 C125,190 115,195 100,195 C85,195 75,190 60,185 C45,180 30,170 20,155 C10,140 5,120 5,105 C5,90 5,75 15,55 C25,35 35,25 55,25 C75,25 80,10 100,10 Z'/%3E%3C/svg%3E");
+    
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+/* A BORDA ANIMADA */
+.cupcake-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    
+    /* Borda tracejada fina */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.apache.org/licenses/LICENSE-2.0'%3E%3Cpath fill='none' stroke='%23f8c2d1' stroke-width='2' stroke-dasharray='8 12' stroke-linecap='round' d='M100,10 C120,10 125,25 145,25 C165,25 175,35 185,55 C195,75 195,90 195,105 C195,120 190,140 180,155 C170,170 155,180 140,185 C125,190 115,195 100,195 C85,195 75,190 60,185 C45,180 30,170 20,155 C10,140 5,120 5,105 C5,90 5,75 15,55 C25,35 35,25 55,25 C75,25 80,10 100,10 Z'/%3E%3C/svg%3E");
+    
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    
+    /* Rotação suave */
+    animation: rotateSlow 15s linear infinite;
+}
+
+/* Efeito de Hover */
+.cupcake-container:hover img {
+    transform: scale(1.08);
+}
+
+@keyframes rotateSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Sombra de Fundo (opcional para dar profundidade como na imagem 3) */
+.cupcake-container::before {
+    content: "";
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    background: radial-gradient(circle, rgba(248,194,209,0.2) 0%, rgba(255,255,255,0) 70%);
+    z-index: 0;
+    border-radius: 50%;
+}
+
+
+/* ######################## Fim da section Services ######################### */
 
 
 
+/* --- Ajustes da Seção Recipes --- */
 
+.recipes-section {
+    padding: 80px 0; /* Espaçamento interno para não grudar nas outras seções */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    min-height: 600px; /* Garante que a seção não colapse */
+}
 
+.recipes-section .sec-title {
+    margin-bottom: 50px;
+}
 
+.recipes-section h2 {
+    font-size: 48px;
+    color: #4a3022; /* Tom marrom do seu logo */
+    font-family: 'Cookie', cursive; /* Ou a fonte manuscrita que está usando */
+}
+
+/* Ajuste do Bloco de Receita */
+.recipe-block {
+    position: relative;
+    padding: 15px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.recipe-block:hover {
+    transform: translateY(-5px);
+}
+
+.recipe-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    line-height: 0;
+}
+
+.recipe-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    /* Mantém a proporção de 1100x630 */
+    aspect-ratio: 1100 / 630;
+}
+
+/* Ajuste dos Pontos do Carrossel (Owl Dots) */
+.recipes-carousel .owl-dots {
+    margin-top: 40px !important;
+    text-align: center;
+}
+
+.recipes-carousel .owl-dot span {
+    width: 12px !important;
+    height: 12px !important;
+    background: #f8c2d1 !important; /* Rosa da sua paleta */
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.recipes-carousel .owl-dot.active span {
+    width: 30px !important; /* Ponto alongado para o ativo */
+    opacity: 1;
+    background: #f8c2d1 !important;
+}
 
