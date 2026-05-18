@@ -3,18 +3,17 @@
     
     <head>
         @include('admin.partials.app-head')
-
     </head>
 
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
 
     <div class="app-wrapper">
-
         @include('admin.partials.app-header')
 
         @include('admin.partials.app-sidebar')
 
         <main class="app-main">
+            @include('admin.partials.content-header')
             @yield('content')
         </main>
 
@@ -38,8 +37,7 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
       crossorigin="anonymous"
     ></script>
-    <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
-    <script src="./js/adminlte.js"></script>
+    <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)--><script src="{{ asset('dash/js/adminlte.js') }}"></script>
     <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
     <script>
       const SELECTOR_SIDEBAR_WRAPPER = '.sidebar-wrapper';

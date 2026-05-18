@@ -12,6 +12,7 @@ use App\Http\Controllers\Site\LoginController;
 // Admin
 use App\Http\Controllers\Admin\DashController;
 use App\Http\Controllers\Admin\CategoriaController;
+use App\Http\Controllers\Admin\Produto;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
