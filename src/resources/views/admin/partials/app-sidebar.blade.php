@@ -46,9 +46,9 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="./index2.html" class="nav-link">
+                    <a href="{{ route('admin.produto.index') }}" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
-                      <p>Dashboard v2</p>
+                      <p>Produtos</p>
                     </a>
                   </li>
                   <li class="nav-item">
