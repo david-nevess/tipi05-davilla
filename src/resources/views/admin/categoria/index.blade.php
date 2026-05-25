@@ -49,9 +49,15 @@
                                         <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditarCategoria{{ $linha->id_categoria }}">
                                             <i class="bi bi-pencil"></i>
                                         </button>
+
+                                    <form action="{{ route('admin.categoria.desativar', $linha->id.categoria) }}"
+                                    method="post">
+                                    @csrf
+                                    @method('PATCH')
                                         <button type="button" class="btn btn-danger">
                                             <i class="bi bi-trash3"></i>
                                         </button>
+                                    </form>
                                     </td>
                                 </tr>
                                 @empty

@@ -3,6 +3,8 @@
     
     <head>
         @include('admin.partials.app-head')
+
+        <link rel="stylesheet" href="{{ asset('hardsettings/dash.css') }}">
     </head>
 
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">

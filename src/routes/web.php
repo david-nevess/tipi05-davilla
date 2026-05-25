@@ -1,5 +1,6 @@
 <?php
 
+// Sites
 
 use App\Http\Controllers\Site\HomeController;
 use App\Http\Controllers\Site\SobreController;
@@ -44,6 +45,9 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
 // Categorias
     route::get('/categorias', [CategoriaController::class, 'index'])->name('categoria.index');
+    route::post('/categorias', [CategoriaController::class, 'store'])->name('categoria.store');
+    route::patch('/categorias{id}', [CategoriaController::class, 'desativar'])->name('categoria.desativar');
+    route::patch('/categorias{id}', [CategoriaController::class, 'ativar'])->name('categoria.ativar');
 
 // Produtos
     route::get('/produto', [ProdutoController::class, 'index'])->name('produto.index');

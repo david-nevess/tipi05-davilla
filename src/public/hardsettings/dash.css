@@ -1,0 +1,31 @@
+
+.modal-title {
+    margin-left: 20px;
+}
+
+/* .form-control {
+    width: 195%;
+} */
+
+#nome_categoria{
+    width: 29em;
+}
+
+.select-formulario {
+    display: flex;
+}
+
+.btn-close {
+    margin-top: 10px;
+    margin-left: 29em;
+}
+
+#exampleFormControlInput2 {
+    height: 50px;
+    margin: 0 10px 0 0;
+}
+
+.form-opcoes {
+    height: 50px;
+    width: 90%;
+}
