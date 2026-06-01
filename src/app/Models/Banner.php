@@ -6,8 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Banner extends Model
 {
-    protected $table = 'tbl_banner'; // Nome exato da tabela
-    protected $primaryKey = 'id_banner'; // Nome da chave primária
+    protected $table = 'tbl_banner';
+    protected $primaryKey = 'id_banner';
+
+    public $timestamps = false;
 
     protected $fillable = [
         'nome_banner',
@@ -18,6 +20,6 @@ class Banner extends Model
         'link_botao_banner',
         'ordem_banner',
         'foto_banner',
-        'status_banner'
+        'status_banner',
     ];
 }

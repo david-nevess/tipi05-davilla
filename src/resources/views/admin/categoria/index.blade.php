@@ -1,87 +1,121 @@
 @extends('layout.admin')
 
 @section('title', 'Categoria | Confeitaria Dashboard')
-@section('pg-titulo', 'categoria')
-@section('link-topo', 'categoria')
+
+@section('pg-titulo', 'Categoria')
+
+@section('link-topo', 'Categoria')
 
 @section('content')
-<div class="app-content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                
-                <div class="card mt-3">
-                    <div class="card-header">
-                        <h3 class="card-title">Gerenciamento de Categorias</h3>
-                        <div class="card-tools">
-                            <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#modalNovaCategoria">
-                                <i class="bi bi-plus-circle"></i>
-                                Nova Categoria
-                            </button>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th style="width: 40px">Ordem</th>
-                                    <th>Nome</th>
-                                    <th>Descrição</th>
-                                    <th>Status</th>
-                                    <th style="width: 200px">Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @forelse($categorias as $linha)
-                                <tr class="align-middle">
-                                    <td>{{ $linha->ordem_categoria }}</td>
-                                    <td>{{ $linha->nome_categoria }}</td>
-                                    <td>{{ $linha->descricao_categoria }}</td>
-                                    <td>
-                                        {{-- Pequena correção ortográfica: de sucess para success --}}
-                                        @if($linha->status_categoria === 'ATIVO')
-                                            <span class="badge text-bg-success">Ativo</span>
-                                        @else
-                                            <span class="badge text-bg-danger">Inativo</span>
-                                        @endif
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditarCategoria{{ $linha->id_categoria }}">
-                                            <i class="bi bi-pencil"></i>
-                                        </button>
 
-                                    <form action="{{ route('admin.categoria.desativar', $linha->id.categoria) }}"
-                                    method="post">
-                                    @csrf
-                                    @method('PATCH')
-                                        <button type="button" class="btn btn-danger">
+<div class="app-content">
+    <!--begin::Container-->
+    <div class="container-fluid">
+        <!--begin::Row-->
+        <div class="row">
+
+            @if (session('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+            @endif
+
+            @if ($errors->any())
+            <div class="alert alert-danger" role="alert">
+                <strong>Atenção!</strong> verifique os campos do formulário.
+            </div>
+            @endif
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Gerenciamento de Categorias</h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#modalNovaCategoria">
+                            <i class="bi bi-plus-circle"></i>
+                            Nova Categoria
+                        </button>
+                    </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body p-0">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th style="width: 40px">Ordem</th>
+                                <th>Nome</th>
+                                <th>Descrição</th>
+                                <th>Status</th>
+                                <th style="width: 200px">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse($categorias as $linha)
+                            <tr class="align-middle">
+                                <td>{{ $linha->ordem_categoria }}</td>
+                                <td>{{ $linha->nome_categoria }}</td>
+                                <td>{{ $linha->descricao_categoria }}</td>
+                                <td>
+                                    @if($linha->status_categoria === 'ATIVO')
+                                    <span class="badge text-bg-success">Ativo</span>
+                                    @else
+                                    <span class="badge text-bg-danger">Inativo</span>
+                                    @endif
+                                </td>
+                                <td>
+                                    <!-- EDITAR -->
+                                    <button type="button"
+                                        class="btn btn-warning"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#modalEditarCategoria{{ $linha->id_categoria }}">
+                                        <i class="bi bi-arrow-counterclockwise"></i>
+                                    </button>
+
+
+
+                                    <!-- DESATIVAR ou ATIVAR -->
+                                    @if($linha->status_categoria === 'ATIVO')
+                                    <form action="{{ route('admin.categoria.desativar', $linha->id_categoria) }}" method="post">
+                                        @csrf
+                                        @method('PATCH')
+                                        <button type="submit" class="btn btn-danger">
                                             <i class="bi bi-trash3"></i>
                                         </button>
                                     </form>
-                                    </td>
-                                </tr>
-                                @empty
-                                <tr>
-                                    <td colspan="5" class="text-center">Nenhuma categoria cadastrada</td>
-                                </tr>
-                                @endforelse
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="card-footer clearfix">
-                        <ul class="pagination pagination-sm m-0 float-end">
-                            <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
-                        </ul>
-                    </div>
+                                    @else
+                                    <form action="{{ route('admin.categoria.ativar', $linha->id_categoria) }}" method="post">
+                                        @csrf
+                                        @method('PATCH')
+                                        <button type="submit" class="btn btn-success">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                    </form>
+                                    @endif
+
+
+
+                                </td>
+                            </tr>
+
+                            @include('admin.categoria.modal.editar', ['categoria' => $linha])
+                            @empty
+                            <tr>
+                                <td>Nenhuma categoria cadastrada</td>
+                            </tr>
+                            @endforelse
+
+                        </tbody>
+                    </table>
                 </div>
-                </div>
-        </div>
+                <!-- /.card-body -->
+            </div>
+
+
         </div>
     </div>
-@include('admin.categoria.modal.create')
+</div>
+
+
+@include('admin.categoria.modal.criar')
+
 
 @endsection
