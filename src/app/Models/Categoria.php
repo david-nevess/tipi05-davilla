@@ -18,11 +18,15 @@ class Categoria extends Model
         'nome_categoria',
         'descricao_categoria',
         'status_categoria',
-        'ordem_categoria'
     ];
 
+    // hasMany: tem muitos
     public function ProdutosCategoria() {
+<<<<<<< HEAD
         return $this->hasMany(Produto::class, 'id_categoria', 'id_categoria');
+=======
+        return $this->hasMany(Produto::class, 'id_categoria',  'id_categoria');
+>>>>>>> versao-estavel
     }
-
+    
 }

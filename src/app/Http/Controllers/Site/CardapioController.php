@@ -1,0 +1,92 @@
+<?php
+
+namespace App\Http\Controllers\Site;
+use App\Http\Controllers\Controller;
+use App\Models\Categoria;
+use App\Models\Produto;
+
+use Illuminate\Http\Request;
+
+class CardapioController extends Controller
+{
+    public function cardapio()
+    {
+        // Buscar CATEGORIA para montar a lista de filtro
+        $filtroCategoria = Categoria::where('status_categoria', 'ATIVO')
+            ->orderBy('nome_categoria')
+            ->get();
+
+
+        // Buscar todos os PRODUTOS ativos COM a categoria
+        $listaProduto = Produto::with('CategoriaProduto')
+            ->where('status_produto', 'ATIVO')
+            ->whereHas('CategoriaProduto', function ($query) {
+                $query->where('status_categoria', 'ATIVO');
+            })
+            ->orderBy('nome_produto')
+            ->get();
+
+        //dd($listaProduto);
+
+        $categoriaAtiva = 'all';
+
+        return view('site.cardapio.cardapio', compact(
+            'filtroCategoria',
+            'listaProduto',
+            'categoriaAtiva'
+        ));
+    }
+
+    public function showProduto($slug)
+    {
+
+        $produto = Produto::with('CategoriaProduto')
+            ->where('status_produto', 'ATIVO')
+                ->whereHas('CategoriaProduto', function ($query) {
+                    $query->where('status_categoria', 'ATIVO');
+            })
+            ->where('slug_produto', $slug)
+            ->firstOrFail();
+
+        $produtosRelacionados = Produto::where('status_produto', 'ATIVO')
+            ->whereHas('CategoriaProduto', function ($query) {
+                $query->where('status_categoria', 'ATIVO');
+            })
+            ->where('id_categoria', $produto->id_categoria)
+            ->where('id_produto', '!=', $produto->id_produto)
+            ->orderBy('nome_produto')
+            ->get();
+
+        $listaCategoria = Categoria::where('status_categoria', 'ATIVO')
+            ->orderBy('nome_categoria')
+            ->get();
+
+        //dd($listaCategoria);
+
+        return view('site.produto.produto', compact('produto', 'produtosRelacionados', 'listaCategoria'));
+    }
+
+    public function show($id)
+    {
+        $filtroCategoria = Categoria::where('status_categoria', 'ATIVO')
+            ->orderBy('nome_categoria')
+            ->get();
+
+        $listaProduto = Produto::with('CategoriaProduto')
+            ->where('status_produto', 'ATIVO')
+            ->whereHas('CategoriaProduto', function ($query) {
+                $query->where('status_categoria', 'ATIVO');
+            })
+            ->orderBy('nome_produto')
+            ->get();
+
+        $categoriaAtiva = '.categoria-' . $id;
+        //.categoria-3
+
+        return view('site.cardapio.cardapio', compact(
+            'filtroCategoria',
+            'listaProduto',
+            'categoriaAtiva'
+        ));
+    }
+}

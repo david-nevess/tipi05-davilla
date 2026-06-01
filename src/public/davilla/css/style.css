@@ -108,7 +108,8 @@ body {
 	color:#4b4342;
 	line-height: 28px;
 	font-weight:400;
-	background:#ffffff;
+	/* background:#ffffff; */
+	background: rgb(230 202 243 / 80%);
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
 	font-family: 'ABeeZee', sans-serif;

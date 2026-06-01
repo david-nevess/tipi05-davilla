@@ -1,10 +1,14 @@
     <!-- Portfolio Sections -->
     <section class="portfolio-section alternate2 portfolio-with-filter">
-        <div class="container-fluid">
 
+            <div class="donuts" style="background-image: url('{{ asset('davilla/images/img-donuts3.png') }}')"></div>
+            
+
+        <div class="container-fluid">
+ 
             <!--MixitUp Galery-->
             <div class="mixitup-gallery">
-
+ 
                 <!-- INICIO Filter-->
                 <div class="filters clearfix">
                     <ul class="filter-tabs filter-btns clearfix">
@@ -13,7 +17,7 @@
                                     <path d="M820.3,96.5c-33.3-20.8-83.5-4.6-118,7.6c-79.5,28.2-150.5,57.8-236.9,44.3C317.8,125.3,122.3-11.8,0,132 c26.4,33.4,64.5-8.1,92.5-18.4c37.9-14,78-14.8,117-5c85.2,21.6,154.1,81.5,242,99.4c43,8.8,93.1,13.5,135.9,1.4 c40.6-11.5,70-41.1,102.9-65.9c22.9-17.3,44-36.9,71.6-23.7c14.9,7.1,20.7,28.6,34.6,37.8c14.7,9.7,34.7,10.1,51,16 C852.6,138,854.8,118.1,820.3,96.5z M494.7,81.7c34.5,4.3,141.9,1.9,134.9-60.3C626.8-3.2,594.7-4.5,577.9,7 c-20.8,14.4-14.3,27.9-44.8,29c-71.9,2.6-145.4-21.3-218.1-21.3C310.4,53.5,463.4,77.9,494.7,81.7z"></path>
                                 </svg></div>
                         </li>
-                        
+                       
                         @foreach ($filtroCategoria as $linha)
                         <li class="filter" data-role="button" data-filter=".categoria-{{ $linha->id_categoria }}">
                             {{$linha->nome_categoria }}
@@ -22,14 +26,18 @@
                                 </svg></div>
                         </li>
                         @endforeach
-
+ 
                     </ul>
                 </div>
                 <!-- FIM Filter-->
-
-
+ 
+ 
                 <div class="filter-list row">
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> versao-estavel
                 @foreach ($listaProduto as $linha)
                     <!-- Portfolio Block Four -->
                     <div class="portfolio-block-four all categoria-{{ $linha->id_categoria }} col-lg-4 col-md-6 col-sm-12">
@@ -43,7 +51,7 @@
                                     <a href="{{ route('cardapio.produto', $linha->slug_produto) }}" class="link"></a>
                                 </div>
                             </div>
-
+ 
                             <div class="lower-content">
                                 <div class="title-box">
                                     <h3><a href="{{ route('cardapio.produto', $linha->slug_produto) }}">
@@ -55,6 +63,7 @@
                                 </div>
                                 <div class="text">{{ \Illuminate\Support\Str::limit($linha->descricao_produto, 100) }}
                             </div>
+<<<<<<< HEAD
                                 <div class="price">{{ number_format($linha->valor_produto, 2, ',', '.') }}</div>
                             </div>
                         </div>
@@ -63,11 +72,21 @@
 
                     @endforeach
 
+=======
+                                <div class="price"> R$ {{ number_format($linha->valor_produto, 2, ',', '.') }}</div>
+                            </div>
+                        </div>
+                    </div>
+ 
+ 
+                    @endforeach
+ 
+>>>>>>> versao-estavel
                 </div>
             </div>
-
+ 
             <div class="btn-box text-center">
-                <a href="#" class="theme-btn btn-style-two large "><span></span>Load More<span></span></a>
+                <a href="#" class="theme-btn btn-style-two large btn-davilla"><span></span>Load More<span></span></a>
             </div>
         </div>
     </section>

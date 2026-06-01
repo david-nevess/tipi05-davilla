@@ -1,3 +1,4 @@
+*:Zone.Identifier
 *.log
 .DS_Store
 .env
@@ -24,3 +25,4 @@ Homestead.json
 Homestead.yaml
 Thumbs.db
 *:Zone.Identifier
+src/node_modules/

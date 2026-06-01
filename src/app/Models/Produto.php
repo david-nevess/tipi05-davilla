@@ -17,7 +17,7 @@ class Produto extends Model
     protected $fillable = [
         'nome_produto',
         'slug_produto',
-        'id_produto',
+        'id_categoria',
         'descricao_produto',
         'tamanho_produto',
         'unid_med_produto',
@@ -25,11 +25,15 @@ class Produto extends Model
         'foto_produto',
         'status_produto',
         'destaque_produto',
-        'ordem_produto',
     ];
     
-// Relacionamento um produto pertence a uma categoria
+
+    // Relacionamento um produto pertence a uma categoria 
+    // belongsTo: pertence a
     public function CategoriaProduto(){
         return $this->belongsTo(Categoria::class, 'id_categoria', 'id_categoria');
-    }
+    }   
+
+
+
 }

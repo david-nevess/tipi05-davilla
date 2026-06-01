@@ -2,10 +2,12 @@
 
 namespace App\Providers;
 
+
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Categoria;
 //use Illuminate\View\View;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,15 +27,17 @@ class AppServiceProvider extends ServiceProvider
          View::composer('partials.header', function ($view) {
 
             // Buscar todas as categorias ordenar por nome
-            $listaCategorias = Categoria::orderBy('nome_categoria')->get();
+            $listaCategoria = Categoria::where('status_categoria', 'ATIVO')
+                ->orderBy('nome_categoria')
+                ->get();
 
-            // dd($categorias);
-            //var_dump($listaCategoria)
+            //dd($listaCategoria);
+            //var_dump($listaCategoria);
 
-            $view->with('lista', $listaCategorias);
-
-            
+            $view->with('lista', $listaCategoria);
 
         });
+       
+
     }
 }
